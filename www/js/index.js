@@ -89,7 +89,7 @@ var app = {
             
                     if (isSupported) {
                         cordova.plugins.locationManager.startAdvertising(beaconRegion)
-                            .fail(conole.error)
+                            .fail(console.error)
                             .done();
                     }
                     else {
