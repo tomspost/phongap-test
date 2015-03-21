@@ -54,7 +54,7 @@ var app = {
             .then(function(isSupported) {
                 console.log("isSupported: " + isSupported);
                 app.adverts = true;
-                alert('BTLE Broadcast is Supported: '+ isSupported);
+                //alert('BTLE Broadcast is Supported: '+ isSupported);
                 
             })
             .fail(console.error)
