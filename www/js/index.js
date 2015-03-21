@@ -61,7 +61,7 @@ var app = {
             .done();
             
             
-            var uuid = 'DA5336AE-2042 - 453 A - A57F - F80DD34DFCD9 ';
+            var uuid = '58c1a8f5-7e5d-4121-8546-8217b941ebc7';
             var identifier = 'advertisedBeacon';
             var minor = 2000;
             var major = 5;
