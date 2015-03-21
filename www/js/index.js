@@ -49,5 +49,11 @@ var app = {
     },
     setupBTLE: function(){
         alert('yoyo BTLE setuptime');
+        cordova.plugins.locationManager.isAdvertisingAvailable()
+            .then(function(isSupported) {
+                console.log("isSupported: " + isSupported);
+            })
+            .fail(console.error)
+            .done();
     }
 };
