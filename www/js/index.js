@@ -45,8 +45,9 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        this.setupBTLE();
     },
     setupBTLE: function(){
-        alert('yoyo BTLE setuptime')
+        alert('yoyo BTLE setuptime');
     }
 };

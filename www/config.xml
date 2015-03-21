@@ -73,6 +73,7 @@
    
     
     <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
+    <gap:plugin name="com.jamiestarke.webviewdebug" version="1.0.8" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
