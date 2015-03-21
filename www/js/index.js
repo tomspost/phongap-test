@@ -52,6 +52,7 @@ var app = {
         cordova.plugins.locationManager.isAdvertisingAvailable()
             .then(function(isSupported) {
                 console.log("isSupported: " + isSupported);
+                alert('BTLE Broadcast is Supported: '+ isSupported);
             })
             .fail(console.error)
             .done();
