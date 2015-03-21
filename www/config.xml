@@ -6,7 +6,7 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>iBecon Tag</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -65,11 +65,14 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
+
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
-    <!--
+    
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
-    -->
+   
+    
+    <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
