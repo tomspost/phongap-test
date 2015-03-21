@@ -60,6 +60,7 @@ var app = {
             .fail(console.error)
             .done();
             
+            cordova.plugins.locationManager.requestAlwaysAuthorization();
             
             var uuid = '58c1a8f5-7e5d-4121-8546-8217b941ebc7';
             var identifier = 'advertisedBeacon';
