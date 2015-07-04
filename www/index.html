@@ -27,10 +27,40 @@
 
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <link rel="stylesheet" href="css/ea.css" />
     <link rel="stylesheet" href="js/jq/jquery.mobile-1.4.5.min.css" />
+
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script src="js/jq/jquery-1.11.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.1/isotope.pkgd.min.js"></script>
+
+    <script type="text/javascript">
+        ///app.initialize();
+        //alert("ABout to run!");
+        var $grid ={};
+        $(document).ready(function () {
+            //alert("yes it is running!");
+            $grid = $('.grid');
+            $grid.isotope({
+                itemSelector: '.grid-item',
+                masonry: {
+                    columnWidth: 100
+                }
+            });
+            //alert("Ran!");
+
+
+
+        });
+    </script>
+
+
+
     <script src="js/jq/jquery.mobile-1.4.5.min.js"></script>
+
+
+
 
 
     <script>
@@ -40,6 +70,7 @@
         });
         // Update the contents of the toolbars
         $(document).on("pagecontainerchange", function () {
+
             // Each of the four pages in this demo has a data-title attribute
             // which value is equal to the text of the nav button
             // For example, on first page: <div data-role="page" data-title="Info">
@@ -54,6 +85,7 @@
             ///        $(this).addClass("ui-btn-active");
             ///    }
             ///});
+            $grid.isotope('layout')
         });
     </script>
 
@@ -62,7 +94,7 @@
 
 <body>
 
-    <div data-role="header" data-theme="b" data-position="fixed" >
+    <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
         <h1>Foo</h1>
     </div>
     <!-- /header -->
@@ -72,31 +104,28 @@
 
 
 
-        <div role="main" class="ui-content">
-            <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-                        <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
+        <div role="main" class="ui-content ">
+            <div class="grid">
+
+                <div class="grid-item grid-item--width2">
+                    <p><a href="#bar">to bar</a></p>
+
+                </div>
+                <div class="grid-item grid-item--height2">
+                    <h1>Sell my house</h1>
+                </div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item grid-item--width2 grid-item--height2"></div>
+                <div class="grid-item grid-item--width2"></div>
+                <div class="grid-item grid-item--width2"></div>
+                <div class="grid-item grid-item--height2"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item grid-item--width2"></div>
+                <div class="grid-item grid-item--height2"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
         </div>
         <!-- /content -->
 
@@ -119,18 +148,17 @@
     </div>
     <!-- /page -->
 
+    <!-- No footer on this app
     <div data-role="footer" data-position="fixed" data-theme="b">
         <h4>Page Footer</h4>
     </div>
-    <!-- /footer -->
+     -->
 
 
- 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        ///app.initialize();
-    </script>
+
+
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+
 </body>
 
 </html>
