@@ -1,8 +1,8 @@
-/* {
+ * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}*/
+}
 
 body {
   font-family: sans-serif;
@@ -43,8 +43,8 @@ html {
   width: 33.33%;
   float: left;
   background: #0D8;
-  outline: 2px solid #333;
-  outline-color: hsla(0, 0%, 0%, 0.7);
+  outline: 5px solid #333;
+  outline-color: #FFF;
 }
 
 .square {}
@@ -55,8 +55,8 @@ html {
 }
 
 .grid-item--width75 {
-  width: 66.66%;
-  padding-bottom: 66.66%;
+  width: 100%;
+  padding-bottom: 100%;
 }
 
 .grid-item--width100 {
