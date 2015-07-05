@@ -1,0 +1,116 @@
+ * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+
+/* ---- grid ---- */
+
+.grid {
+  /*: #3F51B5;*/
+  /*max-width: 1200px;*/
+}
+
+
+/* clear fix */
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+/* ---- .grid-item ---- */
+
+
+.grid-sizer {
+  width: 33.33%;
+}
+
+.grid-item {
+
+  
+}
+
+.square {
+  height: 0;
+  padding-bottom: 33.33%;
+  width: 33.33%;
+  float: left;
+  background: #3F51B5;
+  outline: 6px solid #333;
+  outline-color: #212121;
+
+}
+
+.but3 {
+  height: 200px;
+  background: #3F51B5;
+  outline: 6px solid #333;
+  outline-color: #212121;
+  text-align: center;
+}
+
+.but3 * {
+position: absolute;
+bottom: 10px;
+right: 5px;
+}
+
+.sellMyHouse {
+    background-image: url("../img/Gingerbread.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFC107;
+    background-size: 100%, cover;
+}
+
+.buyAHouse {
+    background-image: url("../img/buyahouse.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFC107;
+    background-size: 100%, cover;
+}
+
+
+.estateAgents {
+    background-image: url("../img/estateagents.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFC107;
+    background-size: 100%, cover;
+}
+
+.txtblock {
+  colorXXX: #FFF; 
+  opacity: 0.95;
+
+}
+
+
+
+.grid-item--width50 {
+  width: 66.66%;
+  padding-bottom: 66.66%;
+}
+
+.grid-item--width75 {
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.grid-item--width100 {
+  width: 100%;
+  
+}

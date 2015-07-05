@@ -27,7 +27,7 @@
 
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="stylesheet" href="css/ea.css" />
+    <link rel="stylesheet" href="css/ea2.css" />
     <link rel="stylesheet" href="js/jq/jquery.mobile-1.4.5.min.css" />
 
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -50,6 +50,11 @@
                 percentPosition: true,
             });
             //alert("Ran!");
+            $grid.isotope({ filter: '.none' });
+            setTimeout( function() {
+                $grid.isotope({ filter: '.but3' });
+            },500);
+            
 
 
 
@@ -86,8 +91,19 @@
             ///        $(this).addClass("ui-btn-active");
             ///    }
             ///});
-            $grid.isotope('layout')
+            $grid.isotope('layout');
         });
+        
+        function sellMyHouse() {
+            $grid.isotope({ filter: '.square' });
+            
+        };
+        
+        function home() {
+            $grid.isotope({ filter: '.but3' });
+            
+        };
+        
     </script>
 
 </head>
@@ -95,30 +111,36 @@
 
 <body>
 
-    <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+    <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false" style="background:#303F9F;">
         <h1>Foo</h1>
+        <p></p>
+        <a onClick="home();" class=" ui-nodisc-icon ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Home</a>
+
     </div>
     <!-- /header -->
 
     <!-- Start of first page -->
-    <div data-role="page" id="foo" data-title="Estate Agents">
+    <div data-role="page" id="foo" data-title="Estate Agents"  data-theme="b" >
 
 
 
         <div role="main" class="ui-contentXX ">
             <div class="grid">
                 <div class="grid-sizer"></div>
-                <div class="grid-item square grid-item--width100">
+                <div class="grid-item  grid-item--width100 but3 sellMyHouse" onClick="sellMyHouse();" ><span class="txtblock"><h1>&nbsp;sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
+                <div class="grid-item  grid-item--width100 but3 buyAHouse"><span><h1>buy&nbsp;a&nbsp;house</h1>local estate agents</span></div>
+                <div class="grid-item  grid-item--width100 but3 estateAgents"><span><h1>estate&nbsp;agents</h1>join the directory</span></div>
+                <div class="grid-item square grid-item--width100" onClick="home();" >
                     <h1>Sell my house</h1>
                 </div>
                 <div class="grid-item square">
                     <p><a href="#bar">to bar</a></p>
                 </div>
-                <div class="grid-item square"></div>
+                <div class="grid-item square">Yo</div>
                 <div class="grid-item square grid-item--width50"></div>
-                <div class="grid-item square"></div>
-                <div class="grid-item square"></div>
-                <div class="grid-item square"></div>
+                <div class="grid-item square">Yo Yo</div>
+                <div class="grid-item square">Dog</div>
+                <div class="grid-item square">Cat</div>
                 <div class="grid-item square grid-item--width75"></div>
                 <div class="grid-item square"></div>
                 <div class="grid-item square"></div>
