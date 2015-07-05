@@ -38,15 +38,16 @@
     <script type="text/javascript">
         ///app.initialize();
         //alert("ABout to run!");
-        var $grid ={};
+        var $grid = {};
         $(document).ready(function () {
             //alert("yes it is running!");
             $grid = $('.grid');
             $grid.isotope({
                 itemSelector: '.grid-item',
                 masonry: {
-                    columnWidth: 100
-                }
+                    columnWidth: '.grid-sizer'
+                },
+                percentPosition: true,
             });
             //alert("Ran!");
 
@@ -104,27 +105,45 @@
 
 
 
-        <div role="main" class="ui-content ">
+        <div role="main" class="ui-contentXX ">
             <div class="grid">
-
-                <div class="grid-item grid-item--width2">
-                    <p><a href="#bar">to bar</a></p>
-
-                </div>
-                <div class="grid-item grid-item--height2">
+                <div class="grid-sizer"></div>
+                <div class="grid-item square grid-item--width100">
                     <h1>Sell my house</h1>
                 </div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item grid-item--width2 grid-item--height2"></div>
-                <div class="grid-item grid-item--width2"></div>
-                <div class="grid-item grid-item--width2"></div>
-                <div class="grid-item grid-item--height2"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item grid-item--width2"></div>
-                <div class="grid-item grid-item--height2"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+                <div class="grid-item square">
+                    <p><a href="#bar">to bar</a></p>
+                </div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square grid-item--width50"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square grid-item--width75"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square grid-item--width100"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+                <div class="grid-item square"></div>
+
             </div>
         </div>
         <!-- /content -->
@@ -157,7 +176,7 @@
 
 
 
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script> -->
 
 </body>
 
