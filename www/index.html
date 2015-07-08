@@ -69,6 +69,7 @@
 
 
     <script src="js/jq/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
 
 
@@ -142,18 +143,14 @@
 
 
         function snapPhoto() {
-
-            alert("snaping");
             navigator.camera.getPicture(
                 function (uri) {
                     var img = document.getElementById('camera_image1');
                     img.style.visibility = "visible";
                     img.style.display = "block";
                     img.src = uri;
-                    document.getElementById('camera_status').innerHTML = "Success";
-
+                    //document.getElementById('camera_status').innerHTML = "Success";
                 },
-
                 {
                     quality: 50,
                     allowEdit: true,
@@ -319,7 +316,7 @@
 
 
 
-    <script type="text/javascript" src="cordova.js"></script>
+    
 
     <!--<script type="text/javascript" src="js/index.js"></script> -->
 
