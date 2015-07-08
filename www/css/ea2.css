@@ -39,7 +39,6 @@ html {
 
 .grid-item {
 
-  
 }
 
 .square {
@@ -52,6 +51,18 @@ html {
   outline-color: #212121;
 
 }
+
+.buy {
+  height: 0;
+  padding-bottom: 33.33%;
+  width: 33.33%;
+  float: left;
+  background: #009688;
+  outline: 6px solid #333;
+  outline-color: #212121;
+
+}
+
 
 .but3 {
   height: 200px;
@@ -71,7 +82,7 @@ right: 5px;
     background-image: url("../img/Gingerbread.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    color: #FFC107;
+    color: #FFF;
     background-size: 100%, cover;
 }
 
@@ -79,7 +90,7 @@ right: 5px;
     background-image: url("../img/buyahouse.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    color: #FFC107;
+    color: #FFF;
     background-size: 100%, cover;
 }
 
@@ -88,7 +99,7 @@ right: 5px;
     background-image: url("../img/estateagents.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    color: #FFC107;
+    color: #FFF;
     background-size: 100%, cover;
 }
 
@@ -96,6 +107,15 @@ right: 5px;
   colorXXX: #FFF; 
   opacity: 0.95;
 
+}
+
+.gray {
+  background-color: #000;
+  opacity: 0.5;
+  left: 0px;
+  bottom: 0px;
+  top: 58%;
+  right: 0px;
 }
 
 

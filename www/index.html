@@ -50,11 +50,16 @@
                 percentPosition: true,
             });
             //alert("Ran!");
-            $grid.isotope({ filter: '.none' });
-            setTimeout( function() {
-                $grid.isotope({ filter: '.but3' });
-            },500);
-            
+            $grid.isotope({
+                filter: '.none'
+            });
+            setTimeout(function () {
+                $grid.isotope({
+                    filter: '.but3'
+                });
+            }, 200);
+            $("#back").hide();
+
 
 
 
@@ -82,6 +87,7 @@
             // For example, on first page: <div data-role="page" data-title="Info">
             var current = $(".ui-page-active").jqmData("title");
             // Change the heading
+
             $("[data-role='header'] h1").text(current);
             // Remove active class from nav buttons
             //////$("[data-role='navbar'] a.ui-btn-active").removeClass("ui-btn-active");
@@ -93,17 +99,46 @@
             ///});
             $grid.isotope('layout');
         });
-        
+
         function sellMyHouse() {
-            $grid.isotope({ filter: '.square' });
-            
+            $grid.isotope({
+                filter: '.square'
+            });
+            $("#back").show();
+            $("[data-role='header'] h1").text("Sell");
+            back = home;
         };
-        
+
+
+        function buyMyHouse() {
+            $grid.isotope({
+                filter: '.buy'
+            });
+            $("#back").show();
+            $("[data-role='header'] h1").text("Buy");
+            back = home;
+        };
+
+
         function home() {
-            $grid.isotope({ filter: '.but3' });
-            
+            $grid.isotope({
+                filter: '.but3'
+            });
+            $("#back").hide();
+            $("[data-role='header'] h1").text("Estate Agents");
         };
-        
+
+        var back = home;
+
+        function editMyHomeDetails() {
+            back = goback;
+            window.location.href = "#bar";
+        }
+
+        function goback() {
+            history.go(-1);
+            back = home;
+        }
     </script>
 
 </head>
@@ -113,28 +148,29 @@
 
     <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false" style="background:#303F9F;">
         <h1>Foo</h1>
-        <p></p>
-        <a onClick="home();" class=" ui-nodisc-icon ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Home</a>
-
+        <a id="back" onClick="back();" class="back ui-nodisc-icon ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Home</a>
     </div>
     <!-- /header -->
 
     <!-- Start of first page -->
-    <div data-role="page" id="foo" data-title="Estate Agents"  data-theme="b" >
+    <div data-role="page" id="foo" data-title="Estate Agents" data-theme="b">
 
 
 
         <div role="main" class="ui-contentXX ">
             <div class="grid">
                 <div class="grid-sizer"></div>
-                <div class="grid-item  grid-item--width100 but3 sellMyHouse" onClick="sellMyHouse();" ><span class="txtblock"><h1>&nbsp;sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
-                <div class="grid-item  grid-item--width100 but3 buyAHouse"><span><h1>buy&nbsp;a&nbsp;house</h1>local estate agents</span></div>
-                <div class="grid-item  grid-item--width100 but3 estateAgents"><span><h1>estate&nbsp;agents</h1>join the directory</span></div>
-                <div class="grid-item square grid-item--width100" onClick="home();" >
+                <div class="grid-item  grid-item--width100 but3 sellMyHouse" onClick="sellMyHouse();">
+                    <div class="gray"></div><span class="txtblock"><h1>&nbsp;Sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
+                <div class="grid-item  grid-item--width100 but3 buyAHouse" onClick="buyMyHouse();">
+                    <div class="gray"></div><span><h1>Buy&nbsp;a&nbsp;house</h1>local estate agents</span></div>
+                <div class="grid-item  grid-item--width100 but3 estateAgents">
+                    <div class="gray"></div><span><h1>Estate&nbsp;agents</h1>join the directory</span></div>
+                <div class="grid-item square grid-item--width100" onClick="home();">
                     <h1>Sell my house</h1>
                 </div>
-                <div class="grid-item square">
-                    <p><a href="#bar">to bar</a></p>
+                <div class="grid-item square" onClick="editMyHomeDetails()">
+                    <p>Edit me</p>
                 </div>
                 <div class="grid-item square">Yo</div>
                 <div class="grid-item square grid-item--width50"></div>
@@ -168,6 +204,36 @@
                 <div class="grid-item square"></div>
                 <div class="grid-item square"></div>
 
+
+                <div class="grid-item buy grid-item--width100" onClick="home();">
+                    <h1>Buy my house</h1>
+                </div>
+                <div class="grid-item buy">
+                    <p><a href="#bar">to bar</a></p>
+                </div>
+                <div class="grid-item buy">Yo</div>
+                <div class="grid-item buy grid-item--width50"></div>
+                <div class="grid-item buy">Yo Yo</div>
+                <div class="grid-item buy">Dog</div>
+                <div class="grid-item buy">Cat</div>
+                <div class="grid-item buy grid-item--width75"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy grid-item--width100"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+                <div class="grid-item buy"></div>
+
+
             </div>
         </div>
         <!-- /content -->
@@ -177,13 +243,42 @@
     <!-- /page -->
 
     <!-- Start of second page -->
-    <div data-role="page" id="bar" data-title="Sell my house">
+    <div data-role="page" id="bar" data-title="Sell my house" data-theme="b">
 
 
 
         <div role="main" class="ui-content">
             <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-            <p><a href="#foo">Back to foo</a></p>
+
+            <div class="ui-field-contain">
+<label for="textinput-4" >Post Code:</label>
+<input type="text" name="textinput-4" id="textinput-4" placeholder="" value="">
+</div>
+
+            <div class="ui-field-contain">
+                <label for="bedrooms">Type of house:</label>
+                <select name="select-native-1" id="houseType" data-native-menu="false">
+                    <option value="1">Detached</option>
+                    <option value="2">Bungalow</option>
+                    <option value="3">Semi Detached</option>
+                    <option value="4">Terraced</option>
+                    <option value="5">Flat</option>
+                </select>
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="bedrooms">Number of beedrooms:</label>
+                <select name="select-native-1" id="bedrooms" data-native-menu="false">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6+</option>
+                </select>
+            </div>
+
+
         </div>
         <!-- /content -->
 
