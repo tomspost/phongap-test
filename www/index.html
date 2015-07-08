@@ -142,21 +142,28 @@
 
 
         function snapPhoto() {
-            
+
             alert("snaping");
-            navigator.camera.getPicture(uploadPhoto,
-                function (message) {
-                    alert('get picture failed');
-                }, {
+            navigator.camera.getPicture(
+                function (uri) {
+                    var img = document.getElementById('camera_image1');
+                    img.style.visibility = "visible";
+                    img.style.display = "block";
+                    img.src = uri;
+                    document.getElementById('camera_status').innerHTML = "Success";
+
+                },
+
+                {
                     quality: 50,
-                    destinationType: navigator.camera.DestinationType.FILE_URI,
-                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-                }
-            );
+                    allowEdit: true,
+                    destinationType: navigator.camera.DestinationType.FILE_URI
+                });
+
         }
-        
-        function uploadPhoto(){
-            
+
+        function uploadPhoto() {
+
         }
     </script>
 
@@ -296,10 +303,12 @@
                     <option value="6">6+</option>
                 </select>
             </div>
-            
+
             <div class="ui-field-contain">
                 <a href="#" onClick="snapPhoto()" class="ui-btn">Photo of my house</a>
             </div>
+            
+            <img id="camera_image1"/>
 
         </div>
         <!-- /content -->
