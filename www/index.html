@@ -142,6 +142,8 @@
 
 
         function snapPhoto() {
+            
+            alert("snaping");
             navigator.camera.getPicture(uploadPhoto,
                 function (message) {
                     alert('get picture failed');
@@ -151,6 +153,10 @@
                     sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
                 }
             );
+        }
+        
+        function uploadPhoto(){
+            
         }
     </script>
 
