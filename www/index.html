@@ -69,7 +69,7 @@
 
 
     <script src="js/jq/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    <script src="cordova.js"></script>
 
 
 
@@ -103,42 +103,72 @@
 
         function sellMyHouse() {
             $grid.isotope({
-                filter: '.square'
+                filter: '.none'
             });
-            $("#back").show();
-            $("[data-role='header'] h1").text("Sell");
-            back = home;
+            $grid.one('arrangeComplete', function (event, filteredItems) {
+                $grid.isotope({
+                    filter: '.square'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Sell");
+                back = home;
+            })
         };
 
 
         function buyMyHouse() {
+            
             $grid.isotope({
-                filter: '.buy'
+                filter: '.none'
             });
-            $("#back").show();
-            $("[data-role='header'] h1").text("Buy");
-            back = home;
+            $grid.one('arrangeComplete', function (event, filteredItems) {
+                $grid.isotope({
+                    filter: '.buy'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Buy");
+                back = home;
+            })
+
         };
 
 
         function home() {
+            
             $grid.isotope({
-                filter: '.but3'
+                filter: '.none'
             });
-            $("#back").hide();
-            $("[data-role='header'] h1").text("Estate Agents");
+            $grid.one('arrangeComplete', function (event, filteredItems) {
+                $grid.isotope({
+                    filter: '.but3'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Estate Agents");
+                back = home;
+                $("#back").hide();
+            })
+
         };
 
         var back = home;
 
         function editMyHomeDetails() {
+            $grid.isotope({
+                filter: '.none'
+            });
+            $grid.one('arrangeComplete', function (event, filteredItems) {
+                window.location.href = "#bar";
+            })
             back = goback;
-            window.location.href = "#bar";
         }
 
         function goback() {
-            history.go(-1);
+            //history.go(-1);
             back = home;
+            $grid.isotope({
+                filter: '.square'
+            });
+            history.go(-1);
         }
 
 
@@ -150,8 +180,7 @@
                     img.style.display = "block";
                     img.src = uri;
                     //document.getElementById('camera_status').innerHTML = "Success";
-                },
-                {
+                }, {
                     quality: 50,
                     allowEdit: true,
                     destinationType: navigator.camera.DestinationType.FILE_URI
@@ -304,8 +333,8 @@
             <div class="ui-field-contain">
                 <a href="#" onClick="snapPhoto()" class="ui-btn">Photo of my house</a>
             </div>
-            
-            <img id="camera_image1"/>
+
+            <img id="camera_image1" />
 
         </div>
         <!-- /content -->
@@ -316,7 +345,7 @@
 
 
 
-    
+
 
     <!--<script type="text/javascript" src="js/index.js"></script> -->
 

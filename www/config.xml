@@ -4,17 +4,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id        = "com.phonegap.helloworld"
+        id        = "com.magic3d.e66"
         version   = "1.0.0">
 
-    <name>iBecon Tag</name>
+    <name>Estate Agents</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Find and contact estate agents to help sell and buy property.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Teami
+    <author href="http://www.3gmagic.com" email="tomc@3gmagic.com">
+        Grarratt
     </author>
 
     <!--
@@ -70,13 +70,7 @@
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     
-        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
-   
-    
-    <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
-    <gap:plugin name="com.jamiestarke.webviewdebug" version="1.0.8" />
-        
-        
+  
         
         
 
@@ -125,6 +119,7 @@
 
         Otherwise, you can specify specific domains:
     -->
+    
     <access origin="*"/>
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
