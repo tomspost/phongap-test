@@ -139,6 +139,19 @@
             history.go(-1);
             back = home;
         }
+
+
+        function snapPhoto() {
+            navigator.camera.getPicture(uploadPhoto,
+                function (message) {
+                    alert('get picture failed');
+                }, {
+                    quality: 50,
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                }
+            );
+        }
     </script>
 
 </head>
@@ -251,9 +264,9 @@
             <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
 
             <div class="ui-field-contain">
-<label for="textinput-4" >Post Code:</label>
-<input type="text" name="textinput-4" id="textinput-4" placeholder="" value="">
-</div>
+                <label for="textinput-4">Post Code:</label>
+                <input type="text" name="textinput-4" id="textinput-4" placeholder="" value="">
+            </div>
 
             <div class="ui-field-contain">
                 <label for="bedrooms">Type of house:</label>
@@ -277,7 +290,10 @@
                     <option value="6">6+</option>
                 </select>
             </div>
-
+            
+            <div class="ui-field-contain">
+                <a href="#" onClick="snapPhoto()" class="ui-btn">Photo of my house</a>
+            </div>
 
         </div>
         <!-- /content -->
@@ -286,11 +302,6 @@
     </div>
     <!-- /page -->
 
-    <!-- No footer on this app
-    <div data-role="footer" data-position="fixed" data-theme="b">
-        <h4>Page Footer</h4>
-    </div>
-     -->
 
 
     <script type="text/javascript" src="cordova.js"></script>
