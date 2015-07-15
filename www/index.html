@@ -102,63 +102,45 @@
         });
 
         function sellMyHouse() {
+
             $grid.isotope({
-                filter: '.none'
+                filter: '.square'
             });
-            $grid.one('arrangeComplete', function (event, filteredItems) {
-                $grid.isotope({
-                    filter: '.square'
-                });
-                $("#back").show();
-                $("[data-role='header'] h1").text("Sell");
-                back = home;
-            })
+            $("#back").show();
+            $("[data-role='header'] h1").text("Sell");
+            back = home;
+
         };
 
 
         function buyMyHouse() {
-            
+
             $grid.isotope({
-                filter: '.none'
+                filter: '.buy'
             });
-            $grid.one('arrangeComplete', function (event, filteredItems) {
-                $grid.isotope({
-                    filter: '.buy'
-                });
-                $("#back").show();
-                $("[data-role='header'] h1").text("Buy");
-                back = home;
-            })
+            $("#back").show();
+            $("[data-role='header'] h1").text("Buy");
+            back = home;
 
         };
 
 
         function home() {
-            
+
             $grid.isotope({
-                filter: '.none'
+                filter: '.but3'
             });
-            $grid.one('arrangeComplete', function (event, filteredItems) {
-                $grid.isotope({
-                    filter: '.but3'
-                });
-                $("#back").show();
-                $("[data-role='header'] h1").text("Estate Agents");
-                back = home;
-                $("#back").hide();
-            })
+            $("#back").show();
+            $("[data-role='header'] h1").text("Estate Agents");
+            back = home;
+            $("#back").hide();
 
         };
 
         var back = home;
 
         function editMyHomeDetails() {
-            $grid.isotope({
-                filter: '.none'
-            });
-            $grid.one('arrangeComplete', function (event, filteredItems) {
-                window.location.href = "#bar";
-            })
+            window.location.href = "#bar";
             back = goback;
         }
 
@@ -170,6 +152,17 @@
             });
             history.go(-1);
         }
+
+
+
+        $.mobile.orientationChangeEnabled = false;
+        $('.but3').height($(window).height() / 3.2);
+        $(window).on("orientationchange", function (event) {
+            
+            $('.but3').height($(window).height() / 3.2);
+            $grid.isotope('layout');
+
+        });
 
 
         function snapPhoto() {
