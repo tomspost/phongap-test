@@ -107,7 +107,9 @@
             console.log("done titles");
         });
 
-            function sellMyHouse() {
+            $(document).on("vclick", ".sellMyHouse",function(event){sellMyHouse(this,event);});
+            function sellMyHouse(button) {
+                console.log(button,event);
                 $grid.isotope({
                     filter: '.square'
                 });
@@ -157,7 +159,7 @@ $( window ).on( "resize", function( event ) {
     $grid.isotope('layout');
 });
 $('.but3').height($(window).height() / 3.3);
-$grid.isotope('layout');
+//$grid.isotope('layout'); not run yet???
 
             //$.mobile.orientationChangeEnabled = true;
             //$('.but3').height($(window).height() / 3.2);
@@ -218,7 +220,7 @@ $grid.isotope('layout');
         <div role="main" class="ui-contentXX ">
             <div class="grid">
                 <div class="grid-sizer"></div>
-                <div class="grid-item  grid-item--width100 but3 sellMyHouse" onClick="sellMyHouse();">
+                <div id="SellButton" class="grid-item  grid-item--width100 but3 sellMyHouse" onnnClick="sellMyHouse(this);">
                     <div class="gray"></div><span class="txtblock"><h1>&nbsp;Sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
                 <div class="grid-item  grid-item--width100 but3 buyAHouse" onClick="buyMyHouse();">
                     <div class="gray"></div><span><h1>Buy&nbsp;a&nbsp;house</h1>local estate agents</span></div>
