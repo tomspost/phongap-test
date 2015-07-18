@@ -34,10 +34,12 @@
 
     <script src="js/jq/jquery-1.11.3.min.js"></script>
     <script src="js/isotope.js"></script>
+    <script src="js/jq/jquery.mobile-1.4.5.min.js"></script>
 
     <script type="text/javascript">
         ///app.initialize();
         //alert("ABout to run!");
+
         var $grid = {};
         $(document).ready(function () {
             //alert("yes it is running!");
@@ -59,131 +61,142 @@
                 });
             }, 200);
             $("#back").hide();
-
-
-
-
         });
     </script>
 
 
 
-    <script src="js/jq/jquery.mobile-1.4.5.min.js"></script>
     <script src="cordova.js"></script>
 
-
-
-
+<script>
+    $(document).on( "mobileinit", function() { console.log("mobileinit"); });
+    $(document).ready(function () {console.log("doc ready"); });
+</script>
 
     <script>
-        $(function () {
-            $("[data-role='navbar']").navbar();
-            $("[data-role='header'], [data-role='footer']").toolbar();
-        });
-        // Update the contents of the toolbars
-        $(document).on("pagecontainerchange", function () {
-
-            // Each of the four pages in this demo has a data-title attribute
-            // which value is equal to the text of the nav button
-            // For example, on first page: <div data-role="page" data-title="Info">
-            var current = $(".ui-page-active").jqmData("title");
-            // Change the heading
-
-            $("[data-role='header'] h1").text(current);
-            // Remove active class from nav buttons
-            //////$("[data-role='navbar'] a.ui-btn-active").removeClass("ui-btn-active");
-            // Add active class to current nav button
-            ///$("[data-role='navbar'] a").each(function () {
-            ///    if ($(this).text() === current) {
-            ///        $(this).addClass("ui-btn-active");
-            ///    }
-            ///});
-            $grid.isotope('layout');
-        });
-
-        function sellMyHouse() {
-
-            $grid.isotope({
-                filter: '.square'
-            });
-            $("#back").show();
-            $("[data-role='header'] h1").text("Sell");
-            back = home;
-
-        };
-
-
-        function buyMyHouse() {
-
-            $grid.isotope({
-                filter: '.buy'
-            });
-            $("#back").show();
-            $("[data-role='header'] h1").text("Buy");
-            back = home;
-
-        };
-
-
-        function home() {
-
-            $grid.isotope({
-                filter: '.but3'
-            });
-            $("#back").show();
-            $("[data-role='header'] h1").text("Estate Agents");
-            back = home;
-            $("#back").hide();
-
-        };
-
-        var back = home;
-
-        function editMyHomeDetails() {
-            window.location.href = "#bar";
-            back = goback;
-        }
-
-        function goback() {
-            //history.go(-1);
-            back = home;
-            $grid.isotope({
-                filter: '.square'
-            });
-            history.go(-1);
-        }
-
-
-
-        $.mobile.orientationChangeEnabled = false;
-        $('.but3').height($(window).height() / 3.2);
-        $(window).on("orientationchange", function (event) {
-            
-            $('.but3').height($(window).height() / 3.2);
-            $grid.isotope('layout');
-
-        });
-
-
-        function snapPhoto() {
-            navigator.camera.getPicture(
-                function (uri) {
-                    var img = document.getElementById('camera_image1');
-                    img.style.visibility = "visible";
-                    img.style.display = "block";
-                    img.src = uri;
-                    //document.getElementById('camera_status').innerHTML = "Success";
-                }, {
-                    quality: 50,
-                    allowEdit: true,
-                    destinationType: navigator.camera.DestinationType.FILE_URI
+        $(document).ready(function () {
+            console.log("nav script");
+                    $(function () {
+                    $("[data-role='navbar']").navbar();
+                    $("[data-role='header'], [data-role='footer']").toolbar();
                 });
+            $(document).on("pagecontainerchange", function () {
 
-        }
 
-        function uploadPhoto() {
+                // Update the contents of the toolbars
 
-        }
+
+                // Each of the four pages in this demo has a data-title attribute
+                // which value is equal to the text of the nav button
+                // For example, on first page: <div data-role="page" data-title="Info">
+                var current = $(".ui-page-active").jqmData("title");
+                // Change the heading
+
+                $("[data-role='header'] h1").text(current);
+                // Remove active class from nav buttons
+                //////$("[data-role='navbar'] a.ui-btn-active").removeClass("ui-btn-active");
+                // Add active class to current nav button
+                ///$("[data-role='navbar'] a").each(function () {
+                ///    if ($(this).text() === current) {
+                ///        $(this).addClass("ui-btn-active");
+                ///    }
+                ///});
+                $grid.isotope('layout');
+            });
+
+            console.log("done titles");
+        });
+
+            function sellMyHouse() {
+                $grid.isotope({
+                    filter: '.square'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Sell");
+                back = home;
+            };
+
+
+            function buyMyHouse() {
+                $grid.isotope({
+                    filter: '.buy'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Buy");
+                back = home;
+            };
+
+
+            function home() {
+                $grid.isotope({
+                    filter: '.but3'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Estate Agents");
+                back = home;
+                $("#back").hide();
+            }
+
+            var back = home;
+            function editMyHomeDetails() {
+                window.location.href = "#bar";
+                back = goback;
+            }
+
+            function goback() {
+                //history.go(-1);
+                back = home;
+                $grid.isotope({
+                    filter: '.square'
+                });
+                history.go(-1);
+            }
+
+$( window ).on( "resize", function( event ) {
+    $('.but3').height($(window).height() / 3.2);
+    $grid.isotope('layout');
+});
+$('.but3').height($(window).height() / 3.3);
+$grid.isotope('layout');
+
+            //$.mobile.orientationChangeEnabled = true;
+            //$('.but3').height($(window).height() / 3.2);
+            $(window).on("orientationchangeXX",function(event){
+                if(event.orientation == "portrait") {
+                    //alert("portrait");
+                    $('.but3').height($(window).height() / 3.2);
+                    $('.but3').width($(window).width());
+                } else {
+                    //alert("landscape");
+                    $('.but3').height($(window).height());
+                    $('.but3').width($(window).width()/3.2);
+                }
+                
+                console.log(event);
+                $('.but3').height($(window).height() / 3.2);
+                $grid.isotope('layout');
+            });
+            //$( window ).orientationchange();
+
+
+            function snapPhoto() {
+                navigator.camera.getPicture(
+                    function (uri) {
+                        var img = document.getElementById('camera_image1');
+                        img.style.visibility = "visible";
+                        img.style.display = "block";
+                        img.src = uri;
+                        //document.getElementById('camera_status').innerHTML = "Success";
+                    }, {
+                        quality: 50,
+                        allowEdit: true,
+                        destinationType: navigator.camera.DestinationType.FILE_URI
+                    });
+            }
+
+            function uploadPhoto() {
+            }
+        
     </script>
 
 </head>

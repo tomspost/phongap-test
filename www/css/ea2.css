@@ -47,8 +47,8 @@ html {
   width: 33.33%;
   float: left;
   background: #3F51B5;
-  outline: 6px solid #333;
-  outline-color: #212121;
+  /*outline: 6px solid #333;
+  outline-color: #212121;*/
 
 }
 
@@ -58,8 +58,8 @@ html {
   width: 33.33%;
   float: left;
   background: #009688;
-  outline: 6px solid #333;
-  outline-color: #212121;
+  /*outline: 6px solid #333;
+  outline-color: #212121;*/
 
 }
 
@@ -67,9 +67,9 @@ html {
 .but3 {
   height: 200px;
   background: #3F51B5;
-  outline: 6px solid #333;
-  outline-color: #212121;
-  text-align: center;
+  /*outline: 6px solid #333;
+  color: #212121;
+  text-align: center;*/
 }
 
 .but3 * {
@@ -114,7 +114,7 @@ right: 5px;
   opacity: 0.5;
   left: 0px;
   bottom: 0px;
-  top: 58%;
+  top: 54%;
   right: 0px;
 }
 
