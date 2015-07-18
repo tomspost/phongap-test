@@ -118,7 +118,7 @@
                 back = home;
             };
 
-
+        $(document).on("vclick", ".buyAHouse",function(event){buyMyHouse(this,event);});
             function buyMyHouse() {
                 $grid.isotope({
                     filter: '.buy'
@@ -140,11 +140,15 @@
             }
 
             var back = home;
+            
             function editMyHomeDetails() {
                 window.location.href = "#bar";
                 back = goback;
             }
 
+
+
+            $(document).on("vclick", "#back",function(event){goback(this,event);});
             function goback() {
                 //history.go(-1);
                 back = home;
@@ -208,7 +212,7 @@ $('.but3').height($(window).height() / 3.3);
 
     <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false" style="background:#303F9F;">
         <h1>Foo</h1>
-        <a id="back" onClick="back();" class="back ui-nodisc-icon ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Home</a>
+        <a id="back" onXClick="back();" class="back ui-nodisc-icon ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all">Home</a>
     </div>
     <!-- /header -->
 
@@ -222,7 +226,7 @@ $('.but3').height($(window).height() / 3.3);
                 <div class="grid-sizer"></div>
                 <div id="SellButton" class="grid-item  grid-item--width100 but3 sellMyHouse" onnnClick="sellMyHouse(this);">
                     <div class="gray"></div><span class="txtblock"><h1>&nbsp;Sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
-                <div class="grid-item  grid-item--width100 but3 buyAHouse" onClick="buyMyHouse();">
+                <div class="grid-item  grid-item--width100 but3 buyAHouse" onnnnClick="buyMyHouse();">
                     <div class="gray"></div><span><h1>Buy&nbsp;a&nbsp;house</h1>local estate agents</span></div>
                 <div class="grid-item  grid-item--width100 but3 estateAgents">
                     <div class="gray"></div><span><h1>Estate&nbsp;agents</h1>join the directory</span></div>
