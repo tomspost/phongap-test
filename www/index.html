@@ -193,7 +193,10 @@ $('.but3').height($(window).height() / 3.3);
                         img.style.display = "block";
                         img.src = uri;
                         //document.getElementById('camera_status').innerHTML = "Success";
-                    }, {
+                    }, function () {
+                        
+                    },
+                    {
                         quality: 50,
                         allowEdit: true,
                         destinationType: navigator.camera.DestinationType.FILE_URI
