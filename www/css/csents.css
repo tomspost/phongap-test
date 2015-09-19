@@ -34,16 +34,16 @@ html {
 
 
 .grid-sizer {
-  width: 20%;
+  width: 33.33%;
 }
 
 
 
 .square {
   /*border: 5px;*/
-  height: 0;
-  padding-bottom: 20%;
-  width: 20%;
+  height: 337.333;
+  /*padding-bottom: 33.33%;*/
+  width: 33.33%;
   float: left;
   background: #3F51B5;
   /*padding: 10px;*/
@@ -86,8 +86,8 @@ html {
 
 .buy {
   height: 0;
-  padding-bottom: 20%;
-  width: 20%;
+  padding-bottom: 33.33%;
+  width: 33.33%;
   float: left;
   background: #009688;
   /*outline: 6px solid #333;
@@ -97,7 +97,7 @@ html {
 
 
 .but3 {
-  height: 200px;
+  /*height: 200px;*/
   background: #3F51B5;
   /*outline: 6px solid #333;
   color: #212121;
@@ -170,4 +170,23 @@ right: 5px;
 .grid-item--width100 {
   width: 100%;
   
+}
+
+
+.bigscent {
+  width:66.66666667%;
+  height:66.6666667vw;
+  
+}
+
+.scent {
+  width:33.33333333%;
+  height:33.3333333vw;
+  
+}
+
+
+.sidemenu {
+  width:33.3333333%;
+  height: 16.6666667vw;
 }

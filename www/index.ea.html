@@ -27,7 +27,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="stylesheet" href="css/csents.css" />
+    <link rel="stylesheet" href="css/ea2.css" />
     <link rel="stylesheet" href="js/jq/jquery.mobile-1.4.5.min.css" />
 
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -42,52 +42,35 @@
         //alert("ABout to run!");
 
         var $grid = {};
-        var homePage = {
-            className: ".home",
-            type: "class",
-            title: "home"
-        };
-        var sellPage = {
-            className: ".square",
-            type: "class",
-            title: "Sell my house"
-        };
+        var homePage = {className:".but3", type:"class",title:"home"};
+        var sellPage = {className:".square", type:"class",title:"Sell my house"};
         $(document).ready(function () {
             //alert("yes it is running!");
-            bricks.init({
-                isotope: ".grid",
-                item: ".grid-item",
-                sizer: ".grid-sizer",
-                back: "#back"
-            });
-            $(document).on("vclick", ".sellMyHouseClick", function (event) {
-                bricks.nav(sellPage);
-            });
-            $(document).on("vclick", "#back", function (event) {
-                bricks.goBack();
-            });
+            bricks.init({isotope:".grid",item:".grid-item",sizer:".grid-sizer",back:"#back"});
+            $(document).on("vclick", ".sellMyHouseClick",function(event){bricks.nav(sellPage);});
+            $(document).on("vclick", "#back",function(event){bricks.goBack();});
             bricks.nav(homePage);
-
-            /*          
-                      $grid = $('.grid');
-                      $grid.isotope({
-                          itemSelector: '.grid-item',
-                          masonry: {
-                              columnWidth: '.grid-sizer'
-                          },
-                          percentPosition: true,
-                      });
-                      //alert("Ran!");
-                      $grid.isotope({
-                          filter: '.none'
-                      });
-                      setTimeout(function () {
-                          $grid.isotope({
-                              filter: '.but3'
-                          });
-                      }, 200);
-                      $("#back").hide();
-              */
+       
+  /*          
+            $grid = $('.grid');
+            $grid.isotope({
+                itemSelector: '.grid-item',
+                masonry: {
+                    columnWidth: '.grid-sizer'
+                },
+                percentPosition: true,
+            });
+            //alert("Ran!");
+            $grid.isotope({
+                filter: '.none'
+            });
+            setTimeout(function () {
+                $grid.isotope({
+                    filter: '.but3'
+                });
+            }, 200);
+            $("#back").hide();
+    */
         });
     </script>
 
@@ -95,22 +78,144 @@
 
     <script src="cordova.js"></script>
 
-    <script>
-        $(document).on("mobileinit", function () {
-            console.log("mobileinit");
-        });
-        $(document).ready(function () {
-            console.log("doc ready");
-        });
-    </script>
+<script>
+    $(document).on( "mobileinit", function() { console.log("mobileinit"); });
+    $(document).ready(function () {console.log("doc ready"); });
+</script>
 
     <script>
         $(document).ready(function () {
-            $(function () {
-                $("[data-role='navbarX']").navbar();
-                $("[data-role='headerX'], [data-role='footer']").toolbar();
+            console.log("nav script");
+                    $(function () {
+                    $("[data-role='navbar']").navbar();
+                    $("[data-role='header'], [data-role='footer']").toolbar();
+                });
+            $(document).on("pagecontainerchangeXXXX", function () {
+
+
+                // Update the contents of the toolbars
+
+
+                // Each of the four pages in this demo has a data-title attribute
+                // which value is equal to the text of the nav button
+                // For example, on first page: <div data-role="page" data-title="Info">
+                var current = $(".ui-page-active").jqmData("title");
+                // Change the heading
+
+                $("[data-role='header'] h1").text(current);
+                // Remove active class from nav buttons
+                //////$("[data-role='navbar'] a.ui-btn-active").removeClass("ui-btn-active");
+                // Add active class to current nav button
+                ///$("[data-role='navbar'] a").each(function () {
+                ///    if ($(this).text() === current) {
+                ///        $(this).addClass("ui-btn-active");
+                ///    }
+                ///});
+                $grid.isotope('layout');
             });
+
+            console.log("done titles");
         });
+
+            //$(document).on("vclick", ".sellMyHouse",function(event){sellMyHouse(this,event);});
+            function sellMyHouseXX(button) {
+                console.log(button,event);
+                $grid.isotope({
+                    filter: '.square'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Sell");
+                back = home;
+            };
+
+        $(document).on("vclickXXX", ".buyAHouse",function(event){buyMyHouse(this,event);});
+            function buyMyHouseXXX() {
+                $grid.isotope({
+                    filter: '.buy'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Buy");
+                back = home;
+            };
+
+
+            function homeXXX() {
+                $grid.isotope({
+                    filter: '.but3'
+                });
+                $("#back").show();
+                $("[data-role='header'] h1").text("Estate Agents");
+                back = home;
+                $("#back").hide();
+            }
+
+            //var back = home;
+            
+            function editMyHomeDetailsXXX() {
+                window.location.href = "#bar";
+                back = goback;
+            }
+
+
+
+            $(document).on("vclickXXX", "#backKKK",function(event){goback(this,event);});
+            function gobackXXX() {
+                //history.go(-1);
+                back = home;
+                $grid.isotope({
+                    filter: '.square'
+                });
+                history.go(-1);
+            }
+
+$( window ).on( "resizeXXXX", function( event ) {
+    $('.but3').height($(window).height() / 3.2);
+    $grid.isotope('layout');
+});
+$('.but3').height($(window).height() / 3.3);
+//$grid.isotope('layout'); not run yet???
+
+            //$.mobile.orientationChangeEnabled = true;
+            //$('.but3').height($(window).height() / 3.2);
+            $(window).on("orientationchangeXXXX",function(event){
+                if(event.orientation == "portrait") {
+                    //alert("portrait");
+                    $('.but3').height($(window).height() / 3.2);
+                    $('.but3').width($(window).width());
+                } else {
+                    //alert("landscape");
+                    $('.but3').height($(window).height());
+                    $('.but3').width($(window).width()/3.2);
+                }
+                
+                console.log(event);
+                $('.but3').height($(window).height() / 3.2);
+                $grid.isotope('layout');
+            });
+            //$( window ).orientationchange();
+
+
+            function snapPhoto() {
+                navigator.camera.getPicture(
+                    function (uri) {
+                        var img = document.getElementById('camera_image1');
+                        img.style.visibility = "visible";
+                        img.style.display = "block";
+                        img.src = uri;
+                        //document.getElementById('camera_status').innerHTML = "Success";
+                    }, function () {
+                        
+                    },
+                    {
+                        quality: 50,
+                        allowEdit: true,
+                        destinationType: navigator.camera.DestinationType.FILE_URI
+                    });
+            }
+
+            function uploadPhoto() {
+            }
+        
     </script>
 
 </head>
@@ -132,39 +237,6 @@
         <div role="main" class="ui-contentXX ">
             <div class="grid">
                 <div class="grid-sizer"></div>
-              <img class="grid-item home bigscent" src="scentimg/master pngs/Juni_900x1012-tga.png"></img>
-
-               <img class="grid-item home sidemenu" src="scentimg/scentpicker.jpg"></img>                
-               <img class="grid-item home sidemenu" src="scentimg/master pngs/Scent_Label-tga.png"></img>
-    
-               <img class="grid-item home sidemenu" src="img/estateagents.jpg"></img>
-
-                <img class="grid-item home sidemenu" src="scentimg/Magnifying_Glass_Photo.jpg"></img>
-    
-                
-                
-                <img class="grid-item home scent" src="scentimg/master pngs/Paris_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Primrose_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Rainbows_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Proof_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Scent_600x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Soma_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Sugar_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Vine_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Warmth_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Zsst_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Adam_900x1012-tga.png"></img>                
-                <img class="grid-item home scent" src="scentimg/master pngs/Afrique_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Alpine_Flowers_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Alpine_Sport_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Celtic_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Coco_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Davj_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Dune_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Goth_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Adel_900x1012-tga.png"></img>
-                <img class="grid-item home scent" src="scentimg/master pngs/Nut_900x1012-tga.png"></img>
-                
                 <div id="SellButton" class="grid-item  grid-item--width100 but3 sellMyHouse sellMyHouseClick" onnnClick="bricks.nav(sellPage);">
                     <div class="gray"></div><span class="txtblock"><h1>&nbsp;Sell&nbsp;my&nbsp;house&nbsp;</h1>&nbsp;connect to local estate agents&nbsp;</span></div>
                 <div class="grid-item  grid-item--width100 but3 buyAHouse" onnnnClick="buyMyHouse();">
@@ -175,8 +247,15 @@
                     <div class="gray"></div><span><h1>About&nbsp;app</h1>why what and where</span></div>
 
                 <div class="sellMyHouse grid-item square grid-item--width100" onClick="xbricks.nav(homePage)">
-                    <a href="#" onClick='bricks.nav({className:"#bar", type:"url",title:"Edit house details"});' class="icon  ui-btn ui-icon-edit ui-btn-icon-notext ui-corner-all">Edit</a>
+                    <a href="#" onClick='bricks.nav({className:"#bar", type:"url",title:"Edit house details"});' class="icon  ui-btn ui-icon-edit ui-btn-icon-notext ui-corner-all" >Edit</a>
                 </div>
+                <div class="grid-item square b1" >
+                    <p>Top<br/>★★★★</p>
+                </div>
+                <div class=" grid-item square b2"><p>New</p></div>
+                <div class="grid-item square b3"><p>Best<br/>Value</p></div>
+                <div class="grid-item square b4"><p>Messages<br/>24</p></div>
+                <div class="grid-item square b5"><p>Blocked<br/>12</p></div>
                 <div class="grid-item square"></div>
                 <div class="grid-item square"></div>
                 <div class="grid-item square"></div>
